@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cristiane Amorim – Equilíbrio Mental e Performance Pessoal</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <style>
+        /* CSS Variables */
+        :root {
+            --bg-main: #F7F7F5;
+            --bg-alt: #F4F0E7;
+            --bg-card: #DDD9CE;
+            --accent: #98907E;
+            --text-main: #272727;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'system-ui', -apple-system, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.3s ease;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Language Toggle */
+        .language-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-left: 1.5rem;
+            font-size: 0.85rem;
+            color: #F7F7F5;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: inherit;
+            cursor: pointer;
+            padding: 0.1rem 0.3rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            opacity: 0.7;
+            transition: opacity 0.2s ease, transform 0.1s ease;
+        }
+
+        .lang-btn.active {
+            opacity: 1;
+            font-weight: 600;
+            transform: translateY(-1px);
+        }
+
+        .lang-divider {
+            opacity: 0.4;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(42, 42, 40, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        header .nav-links a {
+            color: #F7F7F5;
+        }
+        
+        header .nav-links a:hover {
+            color: #98907E;
+        }
+        
+        header .logo-subtitle {
+            color: #98907E;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.3rem;
+        }
+
+        .logo img {
+            max-height: 65px;
+            height: auto;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .logo-subtitle {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #98907E;
+            margin-top: 0;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background-color: #F7F7F5;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 1.5rem;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            width: 100%;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--text-main);
+            opacity: 0.9;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #7a7362;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(152, 144, 126, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-alt) 100%);
+            border-radius: 16px;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 3rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .mini-bio {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .mini-bio h3 {
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .mini-bio ul {
+            list-style: none;
+        }
+
+        .mini-bio li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .mini-bio li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        /* Target Audience Section */
+        .target-audience {
+            background-color: var(--bg-alt);
+        }
+
+        .audience-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .audience-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .audience-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .audience-card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        /* Method Section */
+        .method-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+        }
+
+        .method-blocks {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .method-block {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .method-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .method-block h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Programs Section */
+        .programs-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .program-card {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .program-card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .program-highlight {
+            color: var(--accent);
+            font-weight: 500;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+
+        .program-card .btn {
+            margin-top: auto;
+            margin-top: 1.5rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--bg-alt);
+        }
+
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--bg-card);
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            padding-top: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* Content Section */
+        .content-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .content-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .content-card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .content-card p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--bg-card);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+        }
+
+        .contact-details {
+            margin-top: 2rem;
+        }
+
+        .contact-details p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--bg-card);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .whatsapp-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-main);
+            color: white;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            opacity: 0.8;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .hero-cta {
+                flex-direction: row;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .audience-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .method-blocks {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .programs-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .testimonial-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .content-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .method-blocks {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.6);
+            }
+            100% {
+                box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .logo img {
+                max-height: 50px;
+            }
+            
+            .logo-subtitle {
+                font-size: 0.6rem;
+                letter-spacing: 1px;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: rgba(42, 42, 40, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            }
+
+            .nav-links.active {
+                transform: translateX(0);
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .whatsapp-float svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Cristiane Amorim">
+            </div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#inicio" data-i18n-key="nav.home">Início</a></li>
+                    <li><a href="#sobre" data-i18n-key="nav.about">Sobre</a></li>
+                    <li><a href="#para-quem-e" data-i18n-key="nav.forWho">Para quem é</a></li>
+                    <li><a href="#metodo" data-i18n-key="nav.method">Método</a></li>
+                    <li><a href="#programas" data-i18n-key="nav.programs">Programas</a></li>
+                    <li><a href="#depoimentos" data-i18n-key="nav.testimonials">Depoimentos</a></li>
+                    <li><a href="#conteudos" data-i18n-key="nav.content">Conteúdos</a></li>
+                    <li><a href="#contato" data-i18n-key="nav.contact">Contato</a></li>
+                </ul>
+                <div class="language-toggle" aria-label="Selecionar idioma">
+                    <button class="lang-btn active" data-lang="pt" type="button">PT</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" data-lang="en" type="button">EN</button>
+                </div>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 data-i18n-key="hero.title">CONSCIÊNCIA para viver seu propósito em qualquer lugar do mundo.</h1>
+                <p data-i18n-key="hero.subtitle">Acompanho brasileiros que vivem no exterior ou no Brasil a encontrar equilíbrio, autoconhecimento e uma nova forma de olhar para a própria história.</p>
+                <div class="hero-cta">
+                    <a href="#contato" class="btn btn-primary" data-i18n-key="hero.cta.session">Agendar uma sessão</a>
+                    <a href="#" class="btn btn-secondary" data-i18n-key="hero.cta.whatsapp">Falar pelo WhatsApp</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/brain.jpg" alt="Equilíbrio Mental e Performance Pessoal">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre">
+        <h2 class="section-title" data-i18n-key="about.title">Quem é Cristiane Amorim</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p data-i18n-key="about.paragraph1">Sou mentora em equilíbrio emocional e performance pessoal. Uno ciência e espiritualidade para ajudar você a transformar energia em ação, reconstruir sua relação consigo mesmo e criar uma vida MAIS LEVE E CONSCIENTE TRABALHANDO SEUS QUADROS MENTAIS.</p>
+                <p data-i18n-key="about.paragraph2">Meu trabalho nasce de uma jornada pessoal de cura, estudos em desenvolvimento humano e prática com brasileiros que vivem desafios emocionais, de identidade e pertencimento – especialmente no processo de morar fora do país.</p>
+            </div>
+            <div class="mini-bio">
+                <h3 data-i18n-key="about.miniBioTitle">Mini-bio</h3>
+                <ul>
+                    <li data-i18n-key="about.miniBio1">União de ciência, espiritualidade e práticas de autoconhecimento</li>
+                    <li data-i18n-key="about.miniBio2">Foco em resultados reais e mudanças sustentáveis de mentalidade</li>
+                    <li data-i18n-key="about.miniBio3">Atendimento online para brasileiros em qualquer lugar do mundo</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience Section -->
+    <section class="target-audience" id="para-quem-e">
+        <h2 class="section-title" data-i18n-key="audience.title">Para quem este trabalho foi criado</h2>
+        <p class="section-subtitle" data-i18n-key="audience.subtitle">Se você se reconhece em alguns desses cenários, este espaço é para você.</p>
+        <div class="audience-cards">
+            <div class="audience-card">
+                <h3 data-i18n-key="audience.card1.title">Brasileiros vivendo nos Estados Unidos</h3>
+                <p data-i18n-key="audience.card1.text">Você mudou de país, mas trouxe consigo medos, culpas e inseguranças. Sente saudade, se cobra demais e muitas vezes não se sente pertencente a lugar nenhum.</p>
+            </div>
+            <div class="audience-card">
+                <h3 data-i18n-key="audience.card2.title">Adultos sobrecarregados emocionalmente</h3>
+                <p data-i18n-key="audience.card2.text">Você faz muito por todo mundo, mas sente dificuldade de se colocar em primeiro lugar. Ansiedade, cansaço e pensamentos acelerados já viraram parte da rotina.</p>
+            </div>
+            <div class="audience-card">
+                <h3 data-i18n-key="audience.card3.title">Jovens em transição</h3>
+                <p data-i18n-key="audience.card3.text">Adolescentes e jovens adultos que estão lidando com novas responsabilidades, mudanças de cidade ou país, e buscam ferramentas para lidar com emoções intensas.</p>
+            </div>
+            <div class="audience-card">
+                <h3 data-i18n-key="audience.card4.title">Quem sente que 'algo precisa mudar'</h3>
+                <p data-i18n-key="audience.card4.text">Você não sabe exatamente o que está errado, mas sente que não está vivendo todo o seu potencial e quer clareza para dar o próximo passo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Method Section -->
+    <section id="metodo">
+        <h2 class="section-title" data-i18n-key="method.title">Como é o meu método</h2>
+        <p class="method-intro" data-i18n-key="method.intro">Meu trabalho une conhecimento científico sobre o funcionamento da mente com ferramentas de espiritualidade prática, sempre com um olhar humano, acolhedor e direto ao ponto.</p>
+        <div class="method-blocks">
+            <div class="method-block">
+                <div class="method-icon">🗺️</div>
+                <h3 data-i18n-key="method.block1.title">Mapeamento emocional</h3>
+                <p data-i18n-key="method.block1.text">Identificamos padrões, gatilhos e crenças que hoje te impedem de viver com mais equilíbrio e presença.</p>
+            </div>
+            <div class="method-block">
+                <div class="method-icon">🔨</div>
+                <h3 data-i18n-key="method.block2.title">Reconstrução interna</h3>
+                <p data-i18n-key="method.block2.text">Trabalhamos autocompaixão, limites saudáveis e uma nova narrativa sobre quem você é e o que merece.</p>
+            </div>
+            <div class="method-block">
+                <div class="method-icon">🛠️</div>
+                <h3 data-i18n-key="method.block3.title">Ferramentas práticas para o dia a dia</h3>
+                <p data-i18n-key="method.block3.text">REFLEXÕES, DIALÉTICAS, práticas simples para aplicar entre os encontros e sustentar as mudanças.</p>
+            </div>
+            <div class="method-block">
+                <div class="method-icon">🎯</div>
+                <h3 data-i18n-key="method.block4.title">Ação com propósito</h3>
+                <p data-i18n-key="method.block4.text">Transformamos clareza em decisões concretas para seu trabalho, relacionamentos e projetos de vida.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programas">
+        <h2 class="section-title" data-i18n-key="programs.title">Formas de trabalhar comigo</h2>
+        <p class="section-subtitle" data-i18n-key="programs.subtitle">Sessões online, do Brasil para qualquer lugar do mundo.</p>
+        <div class="programs-cards">
+            <div class="program-card">
+                <h3 data-i18n-key="programs.card1.title">Sessão de auto percepção – 1 encontro</h3>
+                <p data-i18n-key="programs.card1.text">Um encontro individual para olhar com profundidade para um tema específico que está pesando hoje na sua vida. Saída com visão mais clara, direcionamento e prática para os próximos dias.</p>
+                <div class="program-highlight" data-i18n-key="programs.card1.highlight">Duração: 1h • Atendimento online</div>
+                <a href="#contato" class="btn btn-primary" data-i18n-key="programs.card1.cta">Quero saber mais</a>
+            </div>
+            <div class="program-card">
+                <h3 data-i18n-key="programs.card2.title">Programa Equilíbrio – 4 semanas</h3>
+                <p data-i18n-key="programs.card2.text">Processo guiado de 4 encontros semanais para organizar suas emoções, aliviar a sobrecarga mental e criar novas bases internas para o seu dia a dia.</p>
+                <div class="program-highlight" data-i18n-key="programs.card2.highlight">Para quem quer começar a mudar de forma estruturada.</div>
+                <a href="#contato" class="btn btn-primary" data-i18n-key="programs.card2.cta">Quero saber mais</a>
+            </div>
+            <div class="program-card">
+                <h3 data-i18n-key="programs.card3.title">Mentoria Transformação – 12 semanas</h3>
+                <p data-i18n-key="programs.card3.text">Acompanhamento profundo e personalizado para quem sente que chegou ao limite e precisa redesenhar a própria história. Trabalhamos identidade, propósito, limites e ação alinhada.</p>
+                <div class="program-highlight" data-i18n-key="programs.card3.highlight">Indicado para mudanças mais profundas e sustentáveis.</div>
+                <a href="#contato" class="btn btn-primary" data-i18n-key="programs.card3.cta">Quero saber mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="depoimentos">
+        <h2 class="section-title" data-i18n-key="testimonials.title">O que dizem os meus clientes</h2>
+        <div class="testimonial-cards">
+            <div class="testimonial-card">
+                <p class="testimonial-text" data-i18n-key="testimonials.card1.text">Eu me sentia completamente perdida depois de mudar para os Estados Unidos. Com a Cristiane, consegui entender minhas emoções, organizar meus pensamentos e tomar decisões com mais calma e segurança.</p>
+                <p class="testimonial-author" data-i18n-key="testimonials.card1.author">Ana, 34 anos – Boston (EUA)</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text" data-i18n-key="testimonials.card2.text">Sempre fui muito racional e tinha resistência a qualquer coisa ligada à espiritualidade. A Cristiane trouxe esse tema de forma leve e prática, sem julgamento, e isso fez toda diferença no meu processo.</p>
+                <p class="testimonial-author" data-i18n-key="testimonials.card2.author">Paulo, 41 anos – New Jersey</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text" data-i18n-key="testimonials.card3.text">Cheguei esgotada, sem energia para nada. Hoje consigo me colocar em primeiro lugar sem culpa e tenho ferramentas para lidar com a ansiedade no dia a dia.</p>
+                <p class="testimonial-author" data-i18n-key="testimonials.card3.author">Mariana, 29 anos – Orlando (EUA)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section id="conteudos">
+        <h2 class="section-title" data-i18n-key="content.title">Conteúdos para aprofundar sua jornada</h2>
+        <div class="content-cards">
+            <div class="content-card">
+                <h3 data-i18n-key="content.card1.title">5 sinais de que suas emoções estão pedindo atenção</h3>
+                <p data-i18n-key="content.card1.text">Um guia simples para identificar quando a sobrecarga emocional está começando a afetar a sua rotina.</p>
+                <a href="#" class="btn btn-secondary" data-i18n-key="content.card1.cta">Ler artigo</a>
+            </div>
+            <div class="content-card">
+                <h3 data-i18n-key="content.card2.title">Morar fora sem se perder de si</h3>
+                <p data-i18n-key="content.card2.text">Reflexções para brasileiros que decidiram construir uma vida em outro país sem quebrar o vínculo consigo mesmos.</p>
+                <a href="#" class="btn btn-secondary" data-i18n-key="content.card2.cta">Ler artigo</a>
+            </div>
+            <div class="content-card">
+                <h3 data-i18n-key="content.card3.title">Equilibro não se encontra se cria e se constrói</h3>
+                <p data-i18n-key="content.card3.text">Por que esperar a vida 'acalmar' pode ser uma armadilha – e como criar equilíbrio a partir das suas escolhas diárias.</p>
+                <a href="#" class="btn btn-secondary" data-i18n-key="content.card3.cta">Ler artigo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contato">
+        <h2 class="section-title" data-i18n-key="contact.title">Vamos conversar?</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <p data-i18n-key="contact.description">Preencha o formulário ou fale comigo diretamente pelo WhatsApp para tirar dúvidas e entender qual formato de acompanhamento faz mais sentido para o seu momento.</p>
+                <div class="contact-details">
+                    <p data-i18n-key="contact.email"><strong>E-mail:</strong> contato@cristianeamorim.com</p>
+                    <p data-i18n-key="contact.whatsapp"><strong>WhatsApp:</strong> +55 (00) 00000-0000</p>
+                    <p data-i18n-key="contact.hours"><strong>Atendimentos online, horário comercial (Brasília)</strong></p>
+                </div>
+                <a href="#" class="whatsapp-link" data-i18n-key="contact.whatsappLink">Falar direto no WhatsApp →</a>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="nome" data-i18n-key="contact.form.name">Nome completo</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-i18n-key="contact.form.email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="localizacao" data-i18n-key="contact.form.location">País / Cidade</label>
+                        <input type="text" id="localizacao" name="localizacao" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="assunto" data-i18n-key="contact.form.subject">Assunto</label>
+                        <select id="assunto" name="assunto" required>
+                            <option value="" data-i18n-key="contact.form.selectDefault">Selecione...</option>
+                            <option value="sessao-clareza" data-i18n-key="contact.form.option1">Sessão de clareza</option>
+                            <option value="programa-equilibrio" data-i18n-key="contact.form.option2">Programa Equilíbrio</option>
+                            <option value="mentoria-transformacao" data-i18n-key="contact.form.option3">Mentoria Transformação</option>
+                            <option value="outra-duvida" data-i18n-key="contact.form.option4">Outra dúvida</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem" data-i18n-key="contact.form.message">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-i18n-key="contact.form.submit">Enviar mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p data-i18n-key="footer.copy">&copy; <span id="currentYear"></span> Cristiane Amorim – Equilíbrio Mental e Performance Pessoal. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="#" data-i18n-key="footer.privacy">Política de privacidade</a>
+                <a href="#" data-i18n-key="footer.terms">Termos de uso</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/14109200905" class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <script>
+        const translations = {
+            pt: {
+                'nav.home': 'Início',
+                'nav.about': 'Sobre',
+                'nav.forWho': 'Para quem é',
+                'nav.method': 'Método',
+                'nav.programs': 'Programas',
+                'nav.testimonials': 'Depoimentos',
+                'nav.content': 'Conteúdos',
+                'nav.contact': 'Contato',
+                'hero.title': 'CONSCIÊNCIA para viver seu propósito em qualquer lugar do mundo.',
+                'hero.subtitle': 'Acompanho brasileiros que vivem no exterior ou no Brasil a encontrar equilíbrio, autoconhecimento e uma nova forma de olhar para a própria história.',
+                'hero.cta.session': 'Agendar uma sessão',
+                'hero.cta.whatsapp': 'Falar pelo WhatsApp',
+                'about.title': 'Quem é Cristiane Amorim',
+                'about.paragraph1': 'Sou mentora em equilíbrio emocional e performance pessoal. Uno ciência e espiritualidade para ajudar você a transformar energia em ação, reconstruir sua relação consigo mesmo e criar uma vida MAIS LEVE E CONSCIENTE TRABALHANDO SEUS QUADROS MENTAIS.',
+                'about.paragraph2': 'Meu trabalho nasce de uma jornada pessoal de cura, estudos em desenvolvimento humano e prática com brasileiros que vivem desafios emocionais, de identidade e pertencimento – especialmente no processo de morar fora do país.',
+                'about.miniBioTitle': 'Mini-bio',
+                'about.miniBio1': 'União de ciência, espiritualidade e práticas de autoconhecimento',
+                'about.miniBio2': 'Foco em resultados reais e mudanças sustentáveis de mentalidade',
+                'about.miniBio3': 'Atendimento online para brasileiros em qualquer lugar do mundo',
+                'audience.title': 'Para quem este trabalho foi criado',
+                'audience.subtitle': 'Se você se reconhece em alguns desses cenários, este espaço é para você.',
+                'audience.card1.title': 'Brasileiros vivendo nos Estados Unidos',
+                'audience.card1.text': 'Você mudou de país, mas trouxe consigo medos, culpas e inseguranças. Sente saudade, se cobra demais e muitas vezes não se sente pertencente a lugar nenhum.',
+                'audience.card2.title': 'Adultos sobrecarregados emocionalmente',
+                'audience.card2.text': 'Você faz muito por todo mundo, mas sente dificuldade de se colocar em primeiro lugar. Ansiedade, cansaço e pensamentos acelerados já viraram parte da rotina.',
+                'audience.card3.title': 'Jovens em transição',
+                'audience.card3.text': 'Adolescentes e jovens adultos que estão lidando com novas responsabilidades, mudanças de cidade ou país, e buscam ferramentas para lidar com emoções intensas.',
+                'audience.card4.title': 'Quem sente que "algo precisa mudar"',
+                'audience.card4.text': 'Você não sabe exatamente o que está errado, mas sente que não está vivendo todo o seu potencial e quer clareza para dar o próximo passo.',
+                'method.title': 'Como é o meu método',
+                'method.intro': 'Meu trabalho une conhecimento científico sobre o funcionamento da mente com ferramentas de espiritualidade prática, sempre com um olhar humano, acolhedor e direto ao ponto.',
+                'method.block1.title': 'Mapeamento emocional',
+                'method.block1.text': 'Identificamos padrões, gatilhos e crenças que hoje te impedem de viver com mais equilíbrio e presença.',
+                'method.block2.title': 'Reconstrução interna',
+                'method.block2.text': 'Trabalhamos autocompaixão, limites saudáveis e uma nova narrativa sobre quem você é e o que merece.',
+                'method.block3.title': 'Ferramentas práticas para o dia a dia',
+                'method.block3.text': 'REFLEXÕES, DIALÉTICAS, práticas simples para aplicar entre os encontros e sustentar as mudanças.',
+                'method.block4.title': 'Ação com propósito',
+                'method.block4.text': 'Transformamos clareza em decisões concretas para seu trabalho, relacionamentos e projetos de vida.',
+                'programs.title': 'Formas de trabalhar comigo',
+                'programs.subtitle': 'Sessões online, do Brasil para qualquer lugar do mundo.',
+                'programs.card1.title': 'Sessão de auto percepção – 1 encontro',
+                'programs.card1.text': 'Um encontro individual para olhar com profundidade para um tema específico que está pesando hoje na sua vida. Saída com visão mais clara, direcionamento e prática para os próximos dias.',
+                'programs.card1.highlight': 'Duração: 1h • Atendimento online',
+                'programs.card1.cta': 'Quero saber mais',
+                'programs.card2.title': 'Programa Equilíbrio – 4 semanas',
+                'programs.card2.text': 'Processo guiado de 4 encontros semanais para organizar suas emoções, aliviar a sobrecarga mental e criar novas bases internas para o seu dia a dia.',
+                'programs.card2.highlight': 'Para quem quer começar a mudar de forma estruturada.',
+                'programs.card2.cta': 'Quero saber mais',
+                'programs.card3.title': 'Mentoria Transformação – 12 semanas',
+                'programs.card3.text': 'Acompanhamento profundo e personalizado para quem sente que chegou ao limite e precisa redesenhar a própria história. Trabalhamos identidade, propósito, limites e ação alinhada.',
+                'programs.card3.highlight': 'Indicado para mudanças mais profundas e sustentáveis.',
+                'programs.card3.cta': 'Quero saber mais',
+                'testimonials.title': 'O que dizem os meus clientes',
+                'testimonials.card1.text': 'Eu me sentia completamente perdida depois de mudar para os Estados Unidos. Com a Cristiane, consegui entender minhas emoções, organizar meus pensamentos e tomar decisões com mais calma e segurança.',
+                'testimonials.card1.author': 'Ana, 34 anos – Boston (EUA)',
+                'testimonials.card2.text': 'Sempre fui muito racional e tinha resistência a qualquer coisa ligada à espiritualidade. A Cristiane trouxe esse tema de forma leve e prática, sem julgamento, e isso fez toda diferença no meu processo.',
+                'testimonials.card2.author': 'Paulo, 41 anos – New Jersey',
+                'testimonials.card3.text': 'Cheguei esgotada, sem energia para nada. Hoje consigo me colocar em primeiro lugar sem culpa e tenho ferramentas para lidar com a ansiedade no dia a dia.',
+                'testimonials.card3.author': 'Mariana, 29 anos – Orlando (EUA)',
+                'content.title': 'Conteúdos para aprofundar sua jornada',
+                'content.card1.title': '5 sinais de que suas emoções estão pedindo atenção',
+                'content.card1.text': 'Um guia simples para identificar quando a sobrecarga emocional está começando a afetar a sua rotina.',
+                'content.card1.cta': 'Ler artigo',
+                'content.card2.title': 'Morar fora sem se perder de si',
+                'content.card2.text': 'Reflexões para brasileiros que decidiram construir uma vida em outro país sem quebrar o vínculo consigo mesmos.',
+                'content.card2.cta': 'Ler artigo',
+                'content.card3.title': 'Equilibro não se encontra se cria e se constrói',
+                'content.card3.text': 'Por que esperar a vida "acalmar" pode ser uma armadilha – e como criar equilíbrio a partir das suas escolhas diárias.',
+                'content.card3.cta': 'Ler artigo',
+                'contact.title': 'Vamos conversar?',
+                'contact.description': 'Preencha o formulário ou fale comigo diretamente pelo WhatsApp para tirar dúvidas e entender qual formato de acompanhamento faz mais sentido para o seu momento.',
+                'contact.email': '<strong>E-mail:</strong> contato@cristianeamorim.com',
+                'contact.whatsapp': '<strong>WhatsApp:</strong> +55 (00) 00000-0000',
+                'contact.hours': '<strong>Atendimentos online, horário comercial (Brasília)</strong>',
+                'contact.whatsappLink': 'Falar direto no WhatsApp →',
+                'contact.form.name': 'Nome completo',
+                'contact.form.email': 'E-mail',
+                'contact.form.location': 'País / Cidade',
+                'contact.form.subject': 'Assunto',
+                'contact.form.selectDefault': 'Selecione...',
+                'contact.form.option1': 'Sessão de clareza',
+                'contact.form.option2': 'Programa Equilíbrio',
+                'contact.form.option3': 'Mentoria Transformação',
+                'contact.form.option4': 'Outra dúvida',
+                'contact.form.message': 'Mensagem',
+                'contact.form.submit': 'Enviar mensagem',
+                'footer.copy': '&copy; <span id="currentYear"></span> Cristiane Amorim – Equilíbrio Mental e Performance Pessoal. Todos os direitos reservados.',
+                'footer.privacy': 'Política de privacidade',
+                'footer.terms': 'Termos de uso'
+            },
+            en: {
+                'nav.home': 'Home',
+                'nav.about': 'About',
+                'nav.forWho': 'Who it is for',
+                'nav.method': 'Method',
+                'nav.programs': 'Programs',
+                'nav.testimonials': 'Testimonials',
+                'nav.content': 'Content',
+                'nav.contact': 'Contact',
+                'hero.title': 'AWARENESS to live your purpose anywhere in the world.',
+                'hero.subtitle': 'I support Brazilians living abroad or in Brazil to find balance, self-knowledge and a new way of looking at their own story.',
+                'hero.cta.session': 'Book a session',
+                'hero.cta.whatsapp': 'Chat on WhatsApp',
+                'about.title': 'Who is Cristiane Amorim',
+                'about.paragraph1': 'I am a mentor in emotional balance and personal performance. I combine science and spirituality to help you transform energy into action, rebuild your relationship with yourself and create a LIGHTER AND MORE CONSCIOUS LIFE BY WORKING ON YOUR MENTAL FRAMES.',
+                'about.paragraph2': 'My work is born from a personal healing journey, studies in human development and practice with Brazilians who experience emotional, identity and belonging challenges – especially in the process of living outside the country.',
+                'about.miniBioTitle': 'Mini bio',
+                'about.miniBio1': 'Combination of science, spirituality and self-knowledge practices',
+                'about.miniBio2': 'Focus on real results and sustainable mindset changes',
+                'about.miniBio3': 'Online sessions for Brazilians anywhere in the world',
+                'audience.title': 'Who this work was created for',
+                'audience.subtitle': 'If you see yourself in some of these scenarios, this space is for you.',
+                'audience.card1.title': 'Brazilians living in the United States',
+                'audience.card1.text': 'You changed countries but brought fears, guilt and insecurities with you. You feel homesick, are too hard on yourself and often don’t feel like you belong anywhere.',
+                'audience.card2.title': 'Emotionally overloaded adults',
+                'audience.card2.text': 'You do a lot for everyone, but find it hard to put yourself first. Anxiety, exhaustion and racing thoughts have become part of your routine.',
+                'audience.card3.title': 'Young people in transition',
+                'audience.card3.text': 'Teenagers and young adults dealing with new responsibilities, moving city or country, and looking for tools to handle intense emotions.',
+                'audience.card4.title': 'Those who feel "something needs to change"',
+                'audience.card4.text': 'You don’t know exactly what is wrong, but you feel you are not living your full potential and want clarity to take the next step.',
+                'method.title': 'How my method works',
+                'method.intro': 'My work brings together scientific knowledge about how the mind works with practical spirituality tools, always with a human, welcoming and direct approach.',
+                'method.block1.title': 'Emotional mapping',
+                'method.block1.text': 'We identify patterns, triggers and beliefs that are currently keeping you from living with more balance and presence.',
+                'method.block2.title': 'Inner reconstruction',
+                'method.block2.text': 'We work on self-compassion, healthy boundaries and a new narrative about who you are and what you deserve.',
+                'method.block3.title': 'Practical tools for everyday life',
+                'method.block3.text': 'REFLECTIONS, DIALOGUES and simple practices to apply between sessions and sustain change.',
+                'method.block4.title': 'Purposeful action',
+                'method.block4.text': 'We transform clarity into concrete decisions for your work, relationships and life projects.',
+                'programs.title': 'Ways to work with me',
+                'programs.subtitle': 'Online sessions, from Brazil to anywhere in the world.',
+                'programs.card1.title': 'Self-awareness session – 1 meeting',
+                'programs.card1.text': 'A one-to-one meeting to look deeply at a specific topic that is weighing on your life today. You leave with more clarity, direction and a practice for the coming days.',
+                'programs.card1.highlight': 'Duration: 1 hour • Online session',
+                'programs.card1.cta': 'Tell me more',
+                'programs.card2.title': 'Balance Program – 4 weeks',
+                'programs.card2.text': 'A 4-session guided process to organize your emotions, relieve mental overload and create new inner foundations for your daily life.',
+                'programs.card2.highlight': 'For those who want to start changing in a structured way.',
+                'programs.card2.cta': 'Tell me more',
+                'programs.card3.title': 'Transformation Mentoring – 12 weeks',
+                'programs.card3.text': 'Deep, personalized mentoring for those who feel they have reached their limit and need to redesign their own story. We work on identity, purpose, boundaries and aligned action.',
+                'programs.card3.highlight': 'Recommended for deeper and more sustainable changes.',
+                'programs.card3.cta': 'Tell me more',
+                'testimonials.title': 'What my clients say',
+                'testimonials.card1.text': 'I felt completely lost after moving to the United States. With Cristiane, I was able to understand my emotions, organize my thoughts and make decisions with more calm and confidence.',
+                'testimonials.card1.author': 'Ana, 34 – Boston (USA)',
+                'testimonials.card2.text': 'I have always been very rational and resistant to anything related to spirituality. Cristiane brought this topic in a light and practical way, without judgment, and that made all the difference in my process.',
+                'testimonials.card2.author': 'Paulo, 41 – New Jersey',
+                'testimonials.card3.text': 'I arrived exhausted, with no energy for anything. Today I can put myself first without guilt and I have tools to handle anxiety in my daily life.',
+                'testimonials.card3.author': 'Mariana, 29 – Orlando (USA)',
+                'content.title': 'Content to deepen your journey',
+                'content.card1.title': '5 signs your emotions are asking for attention',
+                'content.card1.text': 'A simple guide to identify when emotional overload is starting to affect your routine.',
+                'content.card1.cta': 'Read article',
+                'content.card2.title': 'Living abroad without losing yourself',
+                'content.card2.text': 'Reflections for Brazilians who chose to build a life in another country without breaking the bond with themselves.',
+                'content.card2.cta': 'Read article',
+                'content.card3.title': 'Balance is not found, it is created and built',
+                'content.card3.text': 'Why waiting for life to "calm down" can be a trap – and how to create balance from your daily choices.',
+                'content.card3.cta': 'Read article',
+                'contact.title': 'Shall we talk?',
+                'contact.description': 'Fill out the form or talk to me directly on WhatsApp to ask questions and understand which type of support makes the most sense for your moment.',
+                'contact.email': '<strong>Email:</strong> contato@cristianeamorim.com',
+                'contact.whatsapp': '<strong>WhatsApp:</strong> +55 (00) 00000-0000',
+                'contact.hours': '<strong>Online sessions, business hours (Brasília time)</strong>',
+                'contact.whatsappLink': 'Talk directly on WhatsApp →',
+                'contact.form.name': 'Full name',
+                'contact.form.email': 'Email',
+                'contact.form.location': 'Country / City',
+                'contact.form.subject': 'Subject',
+                'contact.form.selectDefault': 'Select...',
+                'contact.form.option1': 'Clarity session',
+                'contact.form.option2': 'Balance Program',
+                'contact.form.option3': 'Transformation Mentoring',
+                'contact.form.option4': 'Other question',
+                'contact.form.message': 'Message',
+                'contact.form.submit': 'Send message',
+                'footer.copy': '&copy; <span id="currentYear"></span> Cristiane Amorim – Mental Balance and Personal Performance. All rights reserved.',
+                'footer.privacy': 'Privacy policy',
+                'footer.terms': 'Terms of use'
+            }
+        };
+
+        function setLanguage(lang) {
+            const dict = translations[lang] || translations.pt;
+            document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+
+            document.querySelectorAll('[data-i18n-key]').forEach(el => {
+                const key = el.getAttribute('data-i18n-key');
+                const value = dict[key];
+                if (!value) return;
+
+                if (
+                    key.startsWith('contact.email') ||
+                    key.startsWith('contact.whatsapp') ||
+                    key.startsWith('contact.hours') ||
+                    key.startsWith('footer.copy')
+                ) {
+                    el.innerHTML = value;
+                } else {
+                    el.textContent = value;
+                }
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+
+            localStorage.setItem('siteLanguage', lang);
+        }
+
+        const savedLang = localStorage.getItem('siteLanguage') || 'pt';
+        window.addEventListener('DOMContentLoaded', () => {
+            setLanguage(savedLang);
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const lang = btn.getAttribute('data-lang');
+                    setLanguage(lang);
+                });
+            });
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
